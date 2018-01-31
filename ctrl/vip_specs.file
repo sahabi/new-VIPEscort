@@ -1,0 +1,55 @@
+# variables and scopes
+
+env = SPx (n of locations bins), vTrack (bin), vMove (bin), vlocs (int: n of locations), uloc1s (int: n of locations), uloc2s (int: n of locations)
+
+sys = vTrack1 (bin), vTrack2 (bin), vloc (int: n of locations), uloc1 (int: n+1 of locations), uloc2 (int: n+1 of locations)
+
+# Tracking and vip moving properties
+
+# vip only moves when tracked
+vMove -> vTrack
+
+# vip is tracked if either UAVs is tracking the vip
+vTrack -> (vTrack1 \/ vTrack2)
+(vTrack1 \/ vTrack2 ) -> vTrack
+
+# UAVx must be at the same location in order to issue the tracking command
+vTrack1 -> (vlocs = x /\ uloc1s = x)
+(vlocs = x /\ uloc1s = x) -> vTrack1
+
+vTrack2 -> (vlocs = x /\ uloc2s = x)
+(vloc = x /\ uloc2 = x) -> vTrack2
+
+# if a UAV is tracking then it cannot be sent a command
+vTrack1 -> uloc1 = 0
+vTrack2 -> uloc2 = 0
+uloc1 = 0 -> vTrack1
+uloc2 = 0 -> vTrack2
+
+# if the command to go to region x is issued then then the UAV will eventually reach it (liveness)
+vloc = x -> vloc1 = x
+uloc1 = x -> uloc1s = x
+uloc2 = x -> uloc2s = x
+uloc1 = x /\ uloc1s != x -> X(uloc1 = x)
+
+# map
+uloc1 = y -> uloc1s = x
+vloc = y -> vlocs = x
+
+# vMove
+vloc = x /\ vlocs != x -> vMove
+vloc = x /\ vlocs = x -> !vMove
+
+# surveillence
+
+# all points are initially not surveilled
+!SPx
+
+# a point is surveilled if either UAVs go to that point
+(uloc1 = x \/ uloc2 = x) -> SPx
+
+# it remains unsurveilled as long as neither UAV visited the point    
+!SPx /\ (uloc1 != x /\ uloc2 != x) -> X(!SPx)
+
+# if a point is surveilled it will remain so.
+SPx -> X(SPx)
