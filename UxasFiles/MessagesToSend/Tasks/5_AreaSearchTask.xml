@@ -3,7 +3,7 @@
         <Rectangle Series="CMASI">
           <CenterPoint>
             <Location3D Series="CMASI">
-              <Latitude>45.3041</Latitude>
+              <Latitude>45.3465</Latitude>
               <Longitude>-120.9387</Longitude>
               <Altitude>0.0</Altitude>
               <AltitudeType>MSL</AltitudeType>
@@ -18,7 +18,7 @@
       <DesiredWavelengthBands/>
       <DwellTime>0</DwellTime>
       <GroundSampleDistance>0.0</GroundSampleDistance>
-      <TaskID>2</TaskID>
+      <TaskID>5</TaskID>
       <Label/>
       <EligibleEntities/>
       <RevisitRate>0.0</RevisitRate>

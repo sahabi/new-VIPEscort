@@ -1,4 +1,4 @@
-    <AirVehicleConfiguration Series="CMASI" Time="1.1">
+    <AirVehicleConfiguration Series="CMASI" Time="1.0">
       <MinimumSpeed>18.005556</MinimumSpeed>
       <MaximumSpeed>33.43889</MaximumSpeed>
       <NominalFlightProfile>
@@ -23,12 +23,12 @@
       <MinAltitudeType>AGL</MinAltitudeType>
       <MaximumAltitude>1000000.0</MaximumAltitude>
       <MaxAltitudeType>MSL</MaxAltitudeType>
-      <ID>1</ID>
+      <ID>4</ID>
       <Affiliation>Unknown</Affiliation>
       <EntityType/>
-      <Label>Escort 1</Label>
+      <Label>VIP</Label>
       <NominalSpeed>22.0</NominalSpeed>
-      <NominalAltitude>1000.0</NominalAltitude>
+      <NominalAltitude>700.0</NominalAltitude>
       <NominalAltitudeType>MSL</NominalAltitudeType>
       <PayloadConfigurationList>
         <GimbalConfiguration Series="CMASI">

@@ -7,11 +7,7 @@
         <SubscribeToMessage MessageType="afrl.cmasi.MissionCommand" />
         <SubscribeToMessage MessageType="afrl.cmasi.VehicleActionCommand" />
         <!-- Not necessary. Included so AMASE can plot task-related information like regions -->
-        <SubscribeToMessage MessageType="afrl.cmasi.KeepInZone" />
-        <SubscribeToMessage MessageType="afrl.cmasi.PointSearchTask" />
-        <SubscribeToMessage MessageType="afrl.cmasi.LineSearchTask" />
         <SubscribeToMessage MessageType="afrl.cmasi.AreaSearchTask" />
-        <SubscribeToMessage MessageType="afrl.cmasi.WatchTask" />
     </Bridge>
     
     <Service Type="Test_SimulationTime"/>
@@ -24,33 +20,39 @@
     <Service Type="PlanBuilderService"/>
     <Service Type="AutomationDiagramDataService"/>
     
+    <Service Type="WaypointPlanManagerService" VehicleID="0" NumberWaypointsToServe="100" NumberWaypointsOverlap="5"
+             DefaultLoiterRadius_m="250"  param.turnType="FlyOver" AddLoiterToEndOfSegments="FALSE"
+             AddLoiterToEndOfMission="FALSE" LoopBackToFirstTask="FALSE" GimbalPayloadId="10001"/>
     <Service Type="WaypointPlanManagerService" VehicleID="1" NumberWaypointsToServe="100" NumberWaypointsOverlap="5"
              DefaultLoiterRadius_m="250"  param.turnType="FlyOver" AddLoiterToEndOfSegments="FALSE"
              AddLoiterToEndOfMission="FALSE" LoopBackToFirstTask="FALSE" GimbalPayloadId="10001"/>
     <Service Type="WaypointPlanManagerService" VehicleID="2" NumberWaypointsToServe="100" NumberWaypointsOverlap="5"
+             DefaultLoiterRadius_m="250"  param.turnType="FlyOver" AddLoiterToEndOfSegments="FALSE"
+             AddLoiterToEndOfMission="FALSE" LoopBackToFirstTask="FALSE" GimbalPayloadId="10001"/>
+    <Service Type="WaypointPlanManagerService" VehicleID="3" NumberWaypointsToServe="100" NumberWaypointsOverlap="5"
              DefaultLoiterRadius_m="250"  param.turnType="FlyOver" AddLoiterToEndOfSegments="FALSE"
              AddLoiterToEndOfMission="FALSE" LoopBackToFirstTask="FALSE" GimbalPayloadId="10002"/>
 
     <Service Type="PlanBuilderService" AssignmentStartPointLead_m="0.0"/>
     
     <Service Type="SendMessagesService" PathToMessageFiles="../MessagesToSend/">
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V1.xml" SendTime_ms="200"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V2.xml" SendTime_ms="210"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V3.xml" SendTime_ms="220"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V1.xml" SendTime_ms="230"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V2.xml" SendTime_ms="240"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="250"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V0.xml" SendTime_ms="200"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V1.xml" SendTime_ms="210"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V2.xml" SendTime_ms="220"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V3.xml" SendTime_ms="230"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V0.xml" SendTime_ms="240"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V1.xml" SendTime_ms="250"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V2.xml" SendTime_ms="260"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="270"/>
         
-        <Message MessageFileName="Tasks/1_AreaSearchTask.xml" SendTime_ms="300"/>
-        <Message MessageFileName="Tasks/2_AreaSearchTask.xml" SendTime_ms="310"/>
-        <Message MessageFileName="Tasks/3_WatchTask.xml" SendTime_ms="320"/>
-        <Message MessageFileName="Tasks/4_PointSearchTask.xml" SendTime_ms="330"/>
+        <Message MessageFileName="Tasks/1_AreaSearchTask.xml" SendTime_ms="280"/>
+        <Message MessageFileName="Tasks/2_AreaSearchTask.xml" SendTime_ms="290"/>
+        <Message MessageFileName="Tasks/3_AreaSearchTask.xml" SendTime_ms="300"/>
+        <Message MessageFileName="Tasks/4_AreaSearchTask.xml" SendTime_ms="310"/>
         
-        <Message MessageFileName="Tasks/KeepInZone_10.xml" SendTime_ms="340"/>
-        <Message MessageFileName="Tasks/OperatingRegion_100.xml" SendTime_ms="350"/>
-        
-        <Message MessageFileName="Tasks/MissionCommand.xml" SendTime_ms="400"/>
-        
+        <Message MessageFileName="Zones/1_KeepOutZone.xml" SendTime_ms="320"/>
+        <Message MessageFileName="Zones/2_KeepOutZone.xml" SendTime_ms="330"/>
+         
         <!-- Message for testing tasks without running the Salty+Slugs synthesized code -->
         <!-- Useful for debugging if you suspect there is an issue with a task definition -->
         <!-- Edit AutomationRequest_Test.xml to test specific tasks with specific vehicles -->
