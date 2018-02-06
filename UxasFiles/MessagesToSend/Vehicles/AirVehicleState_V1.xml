@@ -22,7 +22,7 @@
         <Location3D Series="CMASI">
           <Latitude>45.3289</Latitude>
           <Longitude>-120.9635</Longitude>
-          <Altitude>1000.0</Altitude>
+          <Altitude>700.0</Altitude>
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>

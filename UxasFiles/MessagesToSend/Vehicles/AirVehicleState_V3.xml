@@ -1,5 +1,5 @@
-    <AirVehicleState Series="CMASI">
-      <Airspeed>0.0</Airspeed>
+    <AirVehicleState Series="CMASI" Time="1.5">
+      <Airspeed>22.12111</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>
@@ -26,9 +26,29 @@
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
-      <EnergyAvailable>0.0</EnergyAvailable>
+      <EnergyAvailable>100.0</EnergyAvailable>
       <ActualEnergyRate>0.0</ActualEnergyRate>
-      <PayloadStateList/>
+      <PayloadStateList>
+        <GimbalState Series="CMASI">
+          <PointingMode>AirVehicleRelativeAngle</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>-45.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>1</PayloadID>
+          <Parameters/>
+        </GimbalState>
+        <CameraState Series="CMASI">
+          <HorizontalFieldOfView>45.0</HorizontalFieldOfView>
+          <VerticalFieldOfView>0.0</VerticalFieldOfView>
+          <Footprint/>
+          <PointingMode>Unknown</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>0.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>10001</PayloadID>
+          <Parameters/>
+        </CameraState>
+      </PayloadStateList>
       <CurrentWaypoint>0</CurrentWaypoint>
       <CurrentCommand>0</CurrentCommand>
       <Mode>Waypoint</Mode>
@@ -36,4 +56,3 @@
       <Time>0</Time>
       <Info/>
     </AirVehicleState>
-

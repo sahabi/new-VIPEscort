@@ -9,82 +9,6 @@
     <TrackAgeOut/>
   </ScenarioData>
   <ScenarioEventList>
-    <AirVehicleConfiguration Series="CMASI" Time="1.0">
-      <MinimumSpeed>18.005556</MinimumSpeed>
-      <MaximumSpeed>33.43889</MaximumSpeed>
-      <NominalFlightProfile>
-        <FlightProfile Series="CMASI">
-          <Name/>
-          <Airspeed>22.12111</Airspeed>
-          <PitchAngle>0.0</PitchAngle>
-          <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
-          <EnergyRate>2.78E-4</EnergyRate>
-        </FlightProfile>
-      </NominalFlightProfile>
-      <AlternateFlightProfiles/>
-      <AvailableLoiterTypes>
-        <LoiterType>Circular</LoiterType>
-      </AvailableLoiterTypes>
-      <AvailableTurnTypes>
-        <TurnType>TurnShort</TurnType>
-        <TurnType>FlyOver</TurnType>
-      </AvailableTurnTypes>
-      <MinimumAltitude>0.0</MinimumAltitude>
-      <MinAltitudeType>AGL</MinAltitudeType>
-      <MaximumAltitude>1000000.0</MaximumAltitude>
-      <MaxAltitudeType>MSL</MaxAltitudeType>
-      <ID>4</ID>
-      <Affiliation>Unknown</Affiliation>
-      <EntityType/>
-      <Label>VIP</Label>
-      <NominalSpeed>22.0</NominalSpeed>
-      <NominalAltitude>700.0</NominalAltitude>
-      <NominalAltitudeType>MSL</NominalAltitudeType>
-      <PayloadConfigurationList>
-        <GimbalConfiguration Series="CMASI">
-          <SupportedPointingModes/>
-          <MinAzimuth>-180.0</MinAzimuth>
-          <MaxAzimuth>180.0</MaxAzimuth>
-          <IsAzimuthClamped>true</IsAzimuthClamped>
-          <MinElevation>-130.0</MinElevation>
-          <MaxElevation>40.0</MaxElevation>
-          <IsElevationClamped>true</IsElevationClamped>
-          <MinRotation>0.0</MinRotation>
-          <MaxRotation>0.0</MaxRotation>
-          <IsRotationClamped>true</IsRotationClamped>
-          <MaxAzimuthSlewRate>114.59</MaxAzimuthSlewRate>
-          <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
-          <MaxRotationRate>0.0</MaxRotationRate>
-          <ContainedPayloadList>
-            <int64>10001</int64>
-          </ContainedPayloadList>
-          <PayloadID>1</PayloadID>
-          <PayloadKind/>
-          <Parameters/>
-        </GimbalConfiguration>
-        <CameraConfiguration Series="CMASI">
-          <SupportedWavelengthBand>EO</SupportedWavelengthBand>
-          <FieldOfViewMode>Discrete</FieldOfViewMode>
-          <MinHorizontalFieldOfView>0.11</MinHorizontalFieldOfView>
-          <MaxHorizontalFieldOfView>45.0</MaxHorizontalFieldOfView>
-          <DiscreteHorizontalFieldOfViewList>
-            <real32>45.0</real32>
-            <real32>22.0</real32>
-            <real32>7.6</real32>
-            <real32>3.7</real32>
-            <real32>0.63</real32>
-            <real32>0.11</real32>
-          </DiscreteHorizontalFieldOfViewList>
-          <VideoStreamHorizontalResolution>1024</VideoStreamHorizontalResolution>
-          <VideoStreamVerticalResolution>768</VideoStreamVerticalResolution>
-          <PayloadID>10001</PayloadID>
-          <PayloadKind/>
-          <Parameters/>
-        </CameraConfiguration>
-      </PayloadConfigurationList>
-      <Info/>
-    </AirVehicleConfiguration>
     <AirVehicleConfiguration Series="CMASI" Time="1.1">
       <MinimumSpeed>18.005556</MinimumSpeed>
       <MaximumSpeed>33.43889</MaximumSpeed>
@@ -237,6 +161,158 @@
       </PayloadConfigurationList>
       <Info/>
     </AirVehicleConfiguration>
+    <AirVehicleConfiguration Series="CMASI" Time="1.1">
+      <MinimumSpeed>18.005556</MinimumSpeed>
+      <MaximumSpeed>33.43889</MaximumSpeed>
+      <NominalFlightProfile>
+        <FlightProfile Series="CMASI">
+          <Name/>
+          <Airspeed>22.12111</Airspeed>
+          <PitchAngle>0.0</PitchAngle>
+          <VerticalSpeed>0.0</VerticalSpeed>
+          <MaxBankAngle>20.0</MaxBankAngle>
+          <EnergyRate>2.78E-4</EnergyRate>
+        </FlightProfile>
+      </NominalFlightProfile>
+      <AlternateFlightProfiles/>
+      <AvailableLoiterTypes>
+        <LoiterType>Circular</LoiterType>
+      </AvailableLoiterTypes>
+      <AvailableTurnTypes>
+        <TurnType>TurnShort</TurnType>
+        <TurnType>FlyOver</TurnType>
+      </AvailableTurnTypes>
+      <MinimumAltitude>0.0</MinimumAltitude>
+      <MinAltitudeType>AGL</MinAltitudeType>
+      <MaximumAltitude>1000000.0</MaximumAltitude>
+      <MaxAltitudeType>MSL</MaxAltitudeType>
+      <ID>3</ID>
+      <Affiliation>Unknown</Affiliation>
+      <EntityType/>
+      <Label>Enemy</Label>
+      <NominalSpeed>22.0</NominalSpeed>
+      <NominalAltitude>1000.0</NominalAltitude>
+      <NominalAltitudeType>MSL</NominalAltitudeType>
+      <PayloadConfigurationList>
+        <GimbalConfiguration Series="CMASI">
+          <SupportedPointingModes/>
+          <MinAzimuth>-180.0</MinAzimuth>
+          <MaxAzimuth>180.0</MaxAzimuth>
+          <IsAzimuthClamped>true</IsAzimuthClamped>
+          <MinElevation>-130.0</MinElevation>
+          <MaxElevation>40.0</MaxElevation>
+          <IsElevationClamped>true</IsElevationClamped>
+          <MinRotation>0.0</MinRotation>
+          <MaxRotation>0.0</MaxRotation>
+          <IsRotationClamped>true</IsRotationClamped>
+          <MaxAzimuthSlewRate>114.59</MaxAzimuthSlewRate>
+          <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
+          <MaxRotationRate>0.0</MaxRotationRate>
+          <ContainedPayloadList>
+            <int64>10001</int64>
+          </ContainedPayloadList>
+          <PayloadID>1</PayloadID>
+          <PayloadKind/>
+          <Parameters/>
+        </GimbalConfiguration>
+        <CameraConfiguration Series="CMASI">
+          <SupportedWavelengthBand>EO</SupportedWavelengthBand>
+          <FieldOfViewMode>Discrete</FieldOfViewMode>
+          <MinHorizontalFieldOfView>0.11</MinHorizontalFieldOfView>
+          <MaxHorizontalFieldOfView>45.0</MaxHorizontalFieldOfView>
+          <DiscreteHorizontalFieldOfViewList>
+            <real32>45.0</real32>
+            <real32>22.0</real32>
+            <real32>7.6</real32>
+            <real32>3.7</real32>
+            <real32>0.63</real32>
+            <real32>0.11</real32>
+          </DiscreteHorizontalFieldOfViewList>
+          <VideoStreamHorizontalResolution>1024</VideoStreamHorizontalResolution>
+          <VideoStreamVerticalResolution>768</VideoStreamVerticalResolution>
+          <PayloadID>10001</PayloadID>
+          <PayloadKind/>
+          <Parameters/>
+        </CameraConfiguration>
+      </PayloadConfigurationList>
+      <Info/>
+    </AirVehicleConfiguration>
+    <AirVehicleConfiguration Series="CMASI" Time="1.1">
+      <MinimumSpeed>18.005556</MinimumSpeed>
+      <MaximumSpeed>33.43889</MaximumSpeed>
+      <NominalFlightProfile>
+        <FlightProfile Series="CMASI">
+          <Name/>
+          <Airspeed>22.12111</Airspeed>
+          <PitchAngle>0.0</PitchAngle>
+          <VerticalSpeed>0.0</VerticalSpeed>
+          <MaxBankAngle>20.0</MaxBankAngle>
+          <EnergyRate>2.78E-4</EnergyRate>
+        </FlightProfile>
+      </NominalFlightProfile>
+      <AlternateFlightProfiles/>
+      <AvailableLoiterTypes>
+        <LoiterType>Circular</LoiterType>
+      </AvailableLoiterTypes>
+      <AvailableTurnTypes>
+        <TurnType>TurnShort</TurnType>
+        <TurnType>FlyOver</TurnType>
+      </AvailableTurnTypes>
+      <MinimumAltitude>0.0</MinimumAltitude>
+      <MinAltitudeType>AGL</MinAltitudeType>
+      <MaximumAltitude>1000000.0</MaximumAltitude>
+      <MaxAltitudeType>MSL</MaxAltitudeType>
+      <ID>4</ID>
+      <Affiliation>Unknown</Affiliation>
+      <EntityType/>
+      <Label>VIP</Label>
+      <NominalSpeed>22.0</NominalSpeed>
+      <NominalAltitude>1000.0</NominalAltitude>
+      <NominalAltitudeType>MSL</NominalAltitudeType>
+      <PayloadConfigurationList>
+        <GimbalConfiguration Series="CMASI">
+          <SupportedPointingModes/>
+          <MinAzimuth>-180.0</MinAzimuth>
+          <MaxAzimuth>180.0</MaxAzimuth>
+          <IsAzimuthClamped>true</IsAzimuthClamped>
+          <MinElevation>-130.0</MinElevation>
+          <MaxElevation>40.0</MaxElevation>
+          <IsElevationClamped>true</IsElevationClamped>
+          <MinRotation>0.0</MinRotation>
+          <MaxRotation>0.0</MaxRotation>
+          <IsRotationClamped>true</IsRotationClamped>
+          <MaxAzimuthSlewRate>114.59</MaxAzimuthSlewRate>
+          <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
+          <MaxRotationRate>0.0</MaxRotationRate>
+          <ContainedPayloadList>
+            <int64>10001</int64>
+          </ContainedPayloadList>
+          <PayloadID>1</PayloadID>
+          <PayloadKind/>
+          <Parameters/>
+        </GimbalConfiguration>
+        <CameraConfiguration Series="CMASI">
+          <SupportedWavelengthBand>EO</SupportedWavelengthBand>
+          <FieldOfViewMode>Discrete</FieldOfViewMode>
+          <MinHorizontalFieldOfView>0.11</MinHorizontalFieldOfView>
+          <MaxHorizontalFieldOfView>45.0</MaxHorizontalFieldOfView>
+          <DiscreteHorizontalFieldOfViewList>
+            <real32>45.0</real32>
+            <real32>22.0</real32>
+            <real32>7.6</real32>
+            <real32>3.7</real32>
+            <real32>0.63</real32>
+            <real32>0.11</real32>
+          </DiscreteHorizontalFieldOfViewList>
+          <VideoStreamHorizontalResolution>1024</VideoStreamHorizontalResolution>
+          <VideoStreamVerticalResolution>768</VideoStreamVerticalResolution>
+          <PayloadID>10001</PayloadID>
+          <PayloadKind/>
+          <Parameters/>
+        </CameraConfiguration>
+      </PayloadConfigurationList>
+      <Info/>
+    </AirVehicleConfiguration>
     <AirVehicleState Series="CMASI" Time="1.5">
       <Airspeed>22.12111</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
@@ -261,7 +337,7 @@
         <Location3D Series="CMASI">
           <Latitude>45.3289</Latitude>
           <Longitude>-120.9635</Longitude>
-          <Altitude>1000.0</Altitude>
+          <Altitude>700.0</Altitude>
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
@@ -353,7 +429,122 @@
       <Time>0</Time>
       <Info/>
     </AirVehicleState>
-    <MissionCommand Series="CMASI" Time="1.8">
+    <AirVehicleState Series="CMASI" Time="1.5">
+      <Airspeed>22.12111</Airspeed>
+      <VerticalSpeed>0.0</VerticalSpeed>
+      <WindSpeed>0.0</WindSpeed>
+      <WindDirection>0.0</WindDirection>
+      <ID>3</ID>
+      <u>0.0</u>
+      <v>0.0</v>
+      <w>0.0</w>
+      <udot>0.0</udot>
+      <vdot>0.0</vdot>
+      <wdot>0.0</wdot>
+      <Heading>90.0</Heading>
+      <Pitch>0.0</Pitch>
+      <Roll>0.0</Roll>
+      <p>0.0</p>
+      <q>0.0</q>
+      <r>0.0</r>
+      <Course>0.0</Course>
+      <Groundspeed>0.0</Groundspeed>
+      <Location>
+        <Location3D Series="CMASI">
+          <Latitude>45.3464278753596</Latitude>
+          <Longitude>-120.98532524271845</Longitude>
+          <Altitude>0.0</Altitude>
+          <AltitudeType>MSL</AltitudeType>
+        </Location3D>
+      </Location>
+      <EnergyAvailable>100.0</EnergyAvailable>
+      <ActualEnergyRate>0.0</ActualEnergyRate>
+      <PayloadStateList>
+        <GimbalState Series="CMASI">
+          <PointingMode>AirVehicleRelativeAngle</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>-45.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>1</PayloadID>
+          <Parameters/>
+        </GimbalState>
+        <CameraState Series="CMASI">
+          <HorizontalFieldOfView>45.0</HorizontalFieldOfView>
+          <VerticalFieldOfView>0.0</VerticalFieldOfView>
+          <Footprint/>
+          <PointingMode>Unknown</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>0.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>10001</PayloadID>
+          <Parameters/>
+        </CameraState>
+      </PayloadStateList>
+      <CurrentWaypoint>0</CurrentWaypoint>
+      <CurrentCommand>0</CurrentCommand>
+      <Mode>Waypoint</Mode>
+      <AssociatedTasks/>
+      <Time>0</Time>
+      <Info/>
+    </AirVehicleState>
+    <AirVehicleState Series="CMASI" Time="1.5">
+      <Airspeed>22.12111</Airspeed>
+      <VerticalSpeed>0.0</VerticalSpeed>
+      <WindSpeed>0.0</WindSpeed>
+      <WindDirection>0.0</WindDirection>
+      <ID>4</ID>
+      <u>0.0</u>
+      <v>0.0</v>
+      <w>0.0</w>
+      <udot>0.0</udot>
+      <vdot>0.0</vdot>
+      <wdot>0.0</wdot>
+      <Heading>90.0</Heading>
+      <Pitch>0.0</Pitch>
+      <Roll>0.0</Roll>
+      <p>0.0</p>
+      <q>0.0</q>
+      <r>0.0</r>
+      <Course>0.0</Course>
+      <Groundspeed>0.0</Groundspeed>
+      <Location>
+        <Location3D Series="CMASI">
+          <Latitude>45.3289</Latitude>
+          <Longitude>-120.9635</Longitude>
+          <Altitude>700.0</Altitude>
+          <AltitudeType>MSL</AltitudeType>
+        </Location3D>
+      </Location>
+      <EnergyAvailable>100.0</EnergyAvailable>
+      <ActualEnergyRate>0.0</ActualEnergyRate>
+      <PayloadStateList>
+        <GimbalState Series="CMASI">
+          <PointingMode>AirVehicleRelativeAngle</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>-45.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>1</PayloadID>
+          <Parameters/>
+        </GimbalState>
+        <CameraState Series="CMASI">
+          <HorizontalFieldOfView>45.0</HorizontalFieldOfView>
+          <VerticalFieldOfView>0.0</VerticalFieldOfView>
+          <Footprint/>
+          <PointingMode>Unknown</PointingMode>
+          <Azimuth>0.0</Azimuth>
+          <Elevation>0.0</Elevation>
+          <Rotation>0.0</Rotation>
+          <PayloadID>10001</PayloadID>
+          <Parameters/>
+        </CameraState>
+      </PayloadStateList>
+      <CurrentWaypoint>0</CurrentWaypoint>
+      <CurrentCommand>0</CurrentCommand>
+      <Mode>Waypoint</Mode>
+      <AssociatedTasks/>
+      <Time>0</Time>
+      <Info/>
+  </AirVehicleState>     <MissionCommand Series="CMASI" Time="1.8">
       <CommandID>100</CommandID>
       <VehicleID>4</VehicleID>
       <WaypointList>
@@ -479,8 +670,6 @@
       <FirstWaypoint>1</FirstWaypoint>
       <Status>Pending</Status>
     </MissionCommand>
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
     <AreaSearchTask Series="CMASI">
       <SearchArea>
         <Rectangle Series="CMASI">
@@ -3953,73 +4142,6 @@
         </Polygon>
       </Boundary>
     </KeepOutZone>
-    <AirVehicleConfiguration Series="CMASI">
-      <MinimumSpeed>0.0</MinimumSpeed>
-      <MaximumSpeed>0.0</MaximumSpeed>
-      <NominalFlightProfile>
-        <FlightProfile Series="CMASI">
-          <Name/>
-          <Airspeed>0.0</Airspeed>
-          <PitchAngle>0.0</PitchAngle>
-          <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>0.0</MaxBankAngle>
-          <EnergyRate>0.0</EnergyRate>
-        </FlightProfile>
-      </NominalFlightProfile>
-      <AlternateFlightProfiles/>
-      <AvailableLoiterTypes/>
-      <AvailableTurnTypes/>
-      <MinimumAltitude>0.0</MinimumAltitude>
-      <MinAltitudeType>AGL</MinAltitudeType>
-      <MaximumAltitude>1000000.0</MaximumAltitude>
-      <MaxAltitudeType>MSL</MaxAltitudeType>
-      <ID>3</ID>
-      <Affiliation>Unknown</Affiliation>
-      <EntityType/>
-      <Label>Enemy</Label>
-      <NominalSpeed>0.0</NominalSpeed>
-      <NominalAltitude>0.0</NominalAltitude>
-      <NominalAltitudeType>AGL</NominalAltitudeType>
-      <PayloadConfigurationList/>
-      <Info/>
-    </AirVehicleConfiguration>
-    <AirVehicleState Series="CMASI">
-      <Airspeed>0.0</Airspeed>
-      <VerticalSpeed>0.0</VerticalSpeed>
-      <WindSpeed>0.0</WindSpeed>
-      <WindDirection>0.0</WindDirection>
-      <ID>3</ID>
-      <u>0.0</u>
-      <v>0.0</v>
-      <w>0.0</w>
-      <udot>0.0</udot>
-      <vdot>0.0</vdot>
-      <wdot>0.0</wdot>
-      <Heading>90.0</Heading>
-      <Pitch>0.0</Pitch>
-      <Roll>0.0</Roll>
-      <p>0.0</p>
-      <q>0.0</q>
-      <r>0.0</r>
-      <Course>0.0</Course>
-      <Groundspeed>0.0</Groundspeed>
-      <Location>
-        <Location3D Series="CMASI">
-          <Latitude>45.3464278753596</Latitude>
-          <Longitude>-120.98532524271845</Longitude>
-          <Altitude>0.0</Altitude>
-          <AltitudeType>MSL</AltitudeType>
-        </Location3D>
-      </Location>
-      <EnergyAvailable>0.0</EnergyAvailable>
-      <ActualEnergyRate>0.0</ActualEnergyRate>
-      <PayloadStateList/>
-      <CurrentWaypoint>0</CurrentWaypoint>
-      <CurrentCommand>0</CurrentCommand>
-      <Mode>Waypoint</Mode>
-      <AssociatedTasks/>
-      <Time>0</Time>
-      <Info/>
-    </AirVehicleState>
+ 
   </ScenarioEventList>
 </AMASE>

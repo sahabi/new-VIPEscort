@@ -1,11 +1,11 @@
 #!/usr/bin/python
 #import psaltlib.Outputs
 #import psaltlib.Inputs
-from lmcp import LMCPFactory
 import zmq, sys, re, time
+sys.path.insert(0, 'lmcp/py')
+from lmcp import LMCPFactory
 from inspect import getmembers, isfunction
-#from psaltlib.General.AvState import *
-sys.path.insert(0, 'psaltlib/LMCP/py')
+from libs.AvState import *
 
 
 def main():
@@ -20,14 +20,14 @@ def main():
     context = zmq.Context()
     socket_sub = context.socket(zmq.SUB)
     socket_sub.connect("tcp://127.0.0.1:5560")
-    socket_sub.setsockopt(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
+    socket_sub.setsockopt_string(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
     socket_send = context.socket(zmq.PUSH)
     socket_send.connect("tcp://127.0.0.1:5561")
 
     # Set up dictionaries to store AirVehicleConfigurations and AirVehicleStates key'd by ID.
     av_configurations = dict()
     av_states = dict()
-    av_ids = set([0, 1, 2, 3, 4])
+    av_ids = set([1, 2, 3, 4])
     # Record AirVehicleConfigurations. Stop once an AirVehicleState is seen.
     # Ensure all expected UAVs referenced in Salty file are initialized. Warn about duplicates.
     msg_obj = initialize_av_configurations(av_configurations, av_ids, 
@@ -47,17 +47,20 @@ def main():
     # then update AirVehicleStates.
     while True:
         input_states = update_inputs(av_states, socket_send, *input_variable_names)
+        print(input_states)
         #output_state = controller.move(*input_states)
         #fire_outputs(output_state, av_states, socket_send)
         msg_obj = update_av_states(av_states, msg_obj, lmcp_factory, socket_sub)
 
 
 def get_next_message(socket_sub, lmcp_factory):
-        data = socket_sub.recv()
+        data = socket_sub.recv().decode(errors='ignore')
         # messages are single part with a header followed by serialized LMCP header format:
         # [address]$[format]|[type]|[group]|[entity]|[service]$
+        print(data)
         address, attributes, msg = data.split('$', 2)
         msg_format, msg_type, msg_group, entityid, serviceid = attributes.split('|', 4)
+        msg = msg.encode()
         obj = lmcp_factory.getObject(msg)
 
         # sending as entityid{0} and serviceid{0}, so check for loopback
@@ -75,17 +78,17 @@ def initialize_av_configurations(av_configurations, av_ids, lmcp_factory, socket
         if msg_obj and msg_obj.FULL_LMCP_TYPE_NAME == 'afrl.cmasi.AirVehicleConfiguration':
             if msg_obj.get_ID() in av_ids:
                 if not av_configurations.has_key(msg_obj.get_ID()):
-                    print 'Recording AirVehicleConfiguration with ID ' + str(msg_obj.get_ID())
+                    print('Recording AirVehicleConfiguration with ID ' + str(msg_obj.get_ID()))
                 else:
-                    print 'Warning: Recording duplicate AirVehicleConfiguration with ID ' + str(msg_obj.get_ID())
+                    print('Warning: Recording duplicate AirVehicleConfiguration with ID ' + str(msg_obj.get_ID()))
                 av_configurations[msg_obj.get_ID()] = msg_obj
             else:
-                print 'Warning: Ignoring AirVehicleConfiguration with ID ' + str(msg_obj.get_ID()) + \
-                      ' not used in salt file'
+                print('Warning: Ignoring AirVehicleConfiguration with ID ' + str(msg_obj.get_ID()) + \
+                      ' not used in salt file')
         if msg_obj and msg_obj.FULL_LMCP_TYPE_NAME == 'afrl.cmasi.AirVehicleState':
-            print 'Saw first AirVehicleState with ID ' + str(msg_obj.get_ID())
+            print('Saw first AirVehicleState with ID ' + str(msg_obj.get_ID()))
             if len(av_ids.difference(set(av_configurations.keys()))) > 0:
-                print 'Error: Missing AirVehicleConfigurations for ID(s): ' + ", ".join(str(e) for e in av_ids)
+                print('Error: Missing AirVehicleConfigurations for ID(s): ' + ", ".join(str(e) for e in av_ids))
                 sys.exit()
             break
     return msg_obj
@@ -96,13 +99,13 @@ def initialize_av_states(av_configurations, av_states, msg_obj, lmcp_factory, so
     while len(av_initializations) > 0:
         if msg_obj and msg_obj.FULL_LMCP_TYPE_NAME == 'afrl.cmasi.AirVehicleState':
             if not av_configurations.has_key(msg_obj.get_ID()):
-                print 'Warning: Ignoring unknown AirVehicleState ' + str(msg_obj.get_ID())
+                print('Warning: Ignoring unknown AirVehicleState ' + str(msg_obj.get_ID()))
             elif av_initializations.count(msg_obj.get_ID()) == 1:
                 av_states[msg_obj.get_ID()] = AvState(av_configurations[msg_obj.get_ID()], 
                         msg_obj)
                 av_initializations.remove(msg_obj.get_ID())
             else:
-                print av_error + str(msg_obj.get_ID()) + ' seen twice in one cycle.'
+                print(av_error + str(msg_obj.get_ID()) + ' seen twice in one cycle.')
                 sys.exit()
         msg_obj = get_next_message(socket_sub, lmcp_factory)
     return msg_obj
@@ -113,12 +116,12 @@ def update_av_states(av_states, msg_obj, lmcp_factory, socket_sub):
     while len(av_initializations) > 0:
         if msg_obj and msg_obj.FULL_LMCP_TYPE_NAME == 'afrl.cmasi.AirVehicleState':
             if not av_states.has_key(msg_obj.get_ID()):
-                print 'Warning: Ignoring unknown AirVehicleState ' + str(msg_obj.get_ID())
+                print('Warning: Ignoring unknown AirVehicleState ' + str(msg_obj.get_ID()))
             elif av_initializations.count(msg_obj.get_ID()) == 1:
                 av_states[msg_obj.get_ID()].update_state(msg_obj)
                 av_initializations.remove(msg_obj.get_ID())
             else:
-                print AVERROR + str(msg_obj.get_ID()) + ' seen twice in one cycle.'
+                print(AVERROR + str(msg_obj.get_ID()) + ' seen twice in one cycle.')
                 sys.exit()
         msg_obj = get_next_message(socket_sub, lmcp_factory)
     return msg_obj

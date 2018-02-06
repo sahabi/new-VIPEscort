@@ -36,14 +36,13 @@
     <Service Type="PlanBuilderService" AssignmentStartPointLead_m="0.0"/>
     
     <Service Type="SendMessagesService" PathToMessageFiles="../MessagesToSend/">
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V0.xml" SendTime_ms="200"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V1.xml" SendTime_ms="210"/>
         <Message MessageFileName="Vehicles/AirVehicleConfiguration_V2.xml" SendTime_ms="220"/>
         <Message MessageFileName="Vehicles/AirVehicleConfiguration_V3.xml" SendTime_ms="230"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V0.xml" SendTime_ms="240"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V4.xml" SendTime_ms="200"/>
         <Message MessageFileName="Vehicles/AirVehicleState_V1.xml" SendTime_ms="250"/>
         <Message MessageFileName="Vehicles/AirVehicleState_V2.xml" SendTime_ms="260"/>
         <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="270"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V4.xml" SendTime_ms="240"/>
         
         <Message MessageFileName="Tasks/1_AreaSearchTask.xml" SendTime_ms="280"/>
         <Message MessageFileName="Tasks/2_AreaSearchTask.xml" SendTime_ms="290"/>
@@ -53,10 +52,6 @@
         <Message MessageFileName="Zones/1_KeepOutZone.xml" SendTime_ms="320"/>
         <Message MessageFileName="Zones/2_KeepOutZone.xml" SendTime_ms="330"/>
          
-        <!-- Message for testing tasks without running the Salty+Slugs synthesized code -->
-        <!-- Useful for debugging if you suspect there is an issue with a task definition -->
-        <!-- Edit AutomationRequest_Test.xml to test specific tasks with specific vehicles -->
-        <!-- <Message MessageFileName="Tasks/AutomationRequest_Test.xml" SendTime_ms="2000"/> -->
     </Service>
     
     <Service Type="MessageLoggerDataService" LogFileMessageCountLimit="1000" FilesPerSubDirectory="1000">
