@@ -6,10 +6,11 @@ sys.path.insert(0, 'lmcp/py')
 from lmcp import LMCPFactory
 from inspect import getmembers, isfunction
 from libs.AvState import *
-
+from Vip import Vip
+sys.path.insert(0, 'ctrl')
 
 def main():
-
+    controller = Vip()
     AVERROR = 'Error: AirVehicleState for ID ' 
 
     # Prepare LMCP factory
@@ -20,7 +21,7 @@ def main():
     context = zmq.Context()
     socket_sub = context.socket(zmq.SUB)
     socket_sub.connect("tcp://127.0.0.1:5560")
-    socket_sub.setsockopt_string(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
+    socket_sub.setsockopt(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
     socket_send = context.socket(zmq.PUSH)
     socket_send.connect("tcp://127.0.0.1:5561")
 
@@ -32,7 +33,7 @@ def main():
     # Ensure all expected UAVs referenced in Salty file are initialized. Warn about duplicates.
     msg_obj = initialize_av_configurations(av_configurations, av_ids, 
             lmcp_factory, socket_sub)
-
+    
     # Pause to give time for UxAS to define tasks
     time.sleep(3.0)
 
@@ -46,21 +47,25 @@ def main():
     # Update input variables, move the controller, fire outputs,
     # then update AirVehicleStates.
     while True:
-        input_states = update_inputs(av_states, socket_send, *input_variable_names)
+        input_states = update_inputs(av_states)
         print(input_states)
-        #output_state = controller.move(*input_states)
+        output_state = controller.move(**input_states)
+        print(output_state)
         #fire_outputs(output_state, av_states, socket_send)
         msg_obj = update_av_states(av_states, msg_obj, lmcp_factory, socket_sub)
 
+def update_inputs(states):
+    return {'sp0':False, 'sp1':False, 'sp2':True, 'sp3':False, 
+            'sp4':True, 'vlocs':1, 'uloc1s':2, 'uloc2s':4, 'olocs':4}
+
 
 def get_next_message(socket_sub, lmcp_factory):
-        data = socket_sub.recv().decode(errors='ignore')
+        data = socket_sub.recv()
         # messages are single part with a header followed by serialized LMCP header format:
         # [address]$[format]|[type]|[group]|[entity]|[service]$
-        print(data)
         address, attributes, msg = data.split('$', 2)
         msg_format, msg_type, msg_group, entityid, serviceid = attributes.split('|', 4)
-        msg = msg.encode()
+        msg = msg
         obj = lmcp_factory.getObject(msg)
 
         # sending as entityid{0} and serviceid{0}, so check for loopback
