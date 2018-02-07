@@ -20,7 +20,7 @@ def main():
     context = zmq.Context()
     socket_sub = context.socket(zmq.SUB)
     socket_sub.connect("tcp://127.0.0.1:5560")
-    socket_sub.setsockopt_string(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
+    socket_sub.setsockopt(zmq.SUBSCRIBE, 'afrl.cmasi.AirVehicle')
     socket_send = context.socket(zmq.PUSH)
     socket_send.connect("tcp://127.0.0.1:5561")
 
@@ -54,13 +54,12 @@ def main():
 
 
 def get_next_message(socket_sub, lmcp_factory):
-        data = socket_sub.recv().decode(errors='ignore')
+        data = socket_sub.recv()
         # messages are single part with a header followed by serialized LMCP header format:
         # [address]$[format]|[type]|[group]|[entity]|[service]$
-        print(data)
         address, attributes, msg = data.split('$', 2)
         msg_format, msg_type, msg_group, entityid, serviceid = attributes.split('|', 4)
-        msg = msg.encode()
+        msg = msg
         obj = lmcp_factory.getObject(msg)
 
         # sending as entityid{0} and serviceid{0}, so check for loopback
@@ -128,6 +127,23 @@ def update_av_states(av_states, msg_obj, lmcp_factory, socket_sub):
 
     return input_state
 
+def update_inputs(av_states, socket_send, *input_variable_names):
+    # From each input variable name, extract the function name, ids of AvStates to be passed as arguments,
+    # and the corresponding function from psaltlib.Inputs. Call the function with the id-key'd AvStates as
+    # arguments. Aggregate results in order in a list.
+    input_state = []
+    for term in input_variable_names:
+        term_elements = re.split('_', term)
+        function_name = term_elements[0]
+        av_id_args = term_elements[1:]
+        args = []
+        for av_id in av_id_args:
+            args.append(av_states[int(av_id)])
+        args.append(socket_send)
+        func = [o for o in getmembers(psaltlib.Inputs) if isfunction(o[1]) and
+                    o[0] == function_name]
+        input_state.append(func[0][1](*args))
+    return input_state
 
 if __name__ == '__main__':
     main()
