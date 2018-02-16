@@ -11,7 +11,7 @@ input sp4 : Bool = True
 input vlocs : Int 0 ... 4 = 1
 input uloc1s : Int 0 ... 4 = 2
 input uloc2s : Int 0 ... 4 = 4
-input olocs : Int 0 ... 4 = 4
+input olocs : Int 0 ... 4 = 3
 
 -- VIP tracking command for UAV1 and UAV2
 output vTrack1 : Bool = False
@@ -20,7 +20,7 @@ output vTrack2 : Bool = False
 -- Go to commands for VIP, UAV1 and UAV2
 output vloc : Int 0 ... 4 = 1
 output uloc1 : Int 0 ... 5 = 2
-output uloc2 : Int 0 ... 5 = 3
+output uloc2 : Int 0 ... 5 = 4
 
 -- Environment assumptions
 env_trans
