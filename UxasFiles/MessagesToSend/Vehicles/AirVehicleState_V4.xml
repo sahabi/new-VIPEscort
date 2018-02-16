@@ -20,8 +20,8 @@
       <Groundspeed>0.0</Groundspeed>
       <Location>
         <Location3D Series="CMASI">
-          <Latitude>45.3289</Latitude>
-          <Longitude>-120.9635</Longitude>
+          <Latitude>45.3041</Latitude>
+          <Longitude>-120.9387</Longitude>
           <Altitude>700.0</Altitude>
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
