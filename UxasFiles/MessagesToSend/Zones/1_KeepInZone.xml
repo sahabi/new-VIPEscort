@@ -13,26 +13,26 @@
         <Polygon Series="CMASI">
             <BoundaryPoints>
                 <Location3D Series="CMASI">
-                    <Latitude>45.3532</Latitude>
-                    <Longitude>-120.9973</Longitude>
+                    <Latitude>45.4032</Latitude>
+                    <Longitude>-121.0573</Longitude>
                     <Altitude>0.0</Altitude>
                     <AltitudeType>MSL</AltitudeType>
                 </Location3D>
                 <Location3D Series="CMASI">
-                    <Latitude>45.3532</Latitude>
-                    <Longitude>-120.9269</Longitude>
+                    <Latitude>45.4032</Latitude>
+                    <Longitude>-120.8709</Longitude>
                     <Altitude>0.0</Altitude>
                     <AltitudeType>MSL</AltitudeType>
                 </Location3D>
                 <Location3D Series="CMASI">
-                    <Latitude>45.2970</Latitude>
-                    <Longitude>-120.9269</Longitude>
+                    <Latitude>45.2570</Latitude>
+                    <Longitude>-120.8709</Longitude>
                     <Altitude>0.0</Altitude>
                     <AltitudeType>MSL</AltitudeType>
                 </Location3D>
                 <Location3D Series="CMASI">
-                    <Latitude>45.2970</Latitude>
-                    <Longitude>-120.9973</Longitude>
+                    <Latitude>45.2570</Latitude>
+                    <Longitude>-121.0473</Longitude>
                     <Altitude>0.0</Altitude>
                     <AltitudeType>MSL</AltitudeType>
                 </Location3D>

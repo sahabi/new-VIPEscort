@@ -5,14 +5,14 @@
         <Rectangle Series="CMASI">
           <CenterPoint>
             <Location3D Series="CMASI">
-              <Latitude>45.3041</Latitude>
-              <Longitude>-120.9849</Longitude>
+              <Latitude>45.287</Latitude>
+              <Longitude>-121.0122</Longitude>
               <Altitude>0.0</Altitude>
               <AltitudeType>MSL</AltitudeType>
             </Location3D>
           </CenterPoint>
-          <Width>1500.0</Width>
-          <Height>1500.0</Height>
+          <Width>3000.0</Width>
+          <Height>3000.0</Height>
           <Rotation>0.0</Rotation>
         </Rectangle>
       </SearchArea>
