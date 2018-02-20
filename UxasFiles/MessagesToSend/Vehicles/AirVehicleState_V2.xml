@@ -34,7 +34,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>-45.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>1</PayloadID>
+          <PayloadID>2</PayloadID>
           <Parameters/>
         </GimbalState>
         <CameraState Series="CMASI">
@@ -45,7 +45,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>0.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10002</PayloadID>
           <Parameters/>
         </CameraState>
       </PayloadStateList>

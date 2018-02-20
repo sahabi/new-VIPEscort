@@ -7,7 +7,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>
@@ -46,9 +46,9 @@
           <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
           <MaxRotationRate>0.0</MaxRotationRate>
           <ContainedPayloadList>
-            <int64>10001</int64>
+            <int64>10002</int64>
           </ContainedPayloadList>
-          <PayloadID>1</PayloadID>
+          <PayloadID>2</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </GimbalConfiguration>
@@ -67,7 +67,7 @@
           </DiscreteHorizontalFieldOfViewList>
           <VideoStreamHorizontalResolution>1024</VideoStreamHorizontalResolution>
           <VideoStreamVerticalResolution>768</VideoStreamVerticalResolution>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10002</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </CameraConfiguration>

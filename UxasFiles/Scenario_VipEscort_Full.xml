@@ -23,7 +23,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>
@@ -95,7 +95,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>
@@ -132,9 +132,9 @@
           <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
           <MaxRotationRate>0.0</MaxRotationRate>
           <ContainedPayloadList>
-            <int64>10001</int64>
+            <int64>10002</int64>
           </ContainedPayloadList>
-          <PayloadID>1</PayloadID>
+          <PayloadID>2</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </GimbalConfiguration>
@@ -171,7 +171,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>
@@ -208,9 +208,9 @@
           <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
           <MaxRotationRate>0.0</MaxRotationRate>
           <ContainedPayloadList>
-            <int64>10001</int64>
+            <int64>10003</int64>
           </ContainedPayloadList>
-          <PayloadID>1</PayloadID>
+          <PayloadID>3</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </GimbalConfiguration>
@@ -229,7 +229,7 @@
           </DiscreteHorizontalFieldOfViewList>
           <VideoStreamHorizontalResolution>1024</VideoStreamHorizontalResolution>
           <VideoStreamVerticalResolution>768</VideoStreamVerticalResolution>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10003</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </CameraConfiguration>
@@ -247,7 +247,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>
@@ -283,9 +283,9 @@
           <MaxElevationSlewRate>114.59</MaxElevationSlewRate>
           <MaxRotationRate>0.0</MaxRotationRate>
           <ContainedPayloadList>
-            <int64>10001</int64>
+            <int64>10004</int64>
           </ContainedPayloadList>
-          <PayloadID>1</PayloadID>
+          <PayloadID>4</PayloadID>
           <PayloadKind/>
           <Parameters/>
         </GimbalConfiguration>
@@ -405,7 +405,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>-45.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>1</PayloadID>
+          <PayloadID>2</PayloadID>
           <Parameters/>
         </GimbalState>
         <CameraState Series="CMASI">
@@ -416,7 +416,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>0.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10002</PayloadID>
           <Parameters/>
         </CameraState>
       </PayloadStateList>
@@ -463,7 +463,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>-45.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>1</PayloadID>
+          <PayloadID>3</PayloadID>
           <Parameters/>
         </GimbalState>
         <CameraState Series="CMASI">
@@ -474,7 +474,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>0.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10003</PayloadID>
           <Parameters/>
         </CameraState>
       </PayloadStateList>
@@ -521,7 +521,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>-45.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>1</PayloadID>
+          <PayloadID>4</PayloadID>
           <Parameters/>
         </GimbalState>
         <CameraState Series="CMASI">
@@ -532,7 +532,7 @@
           <Azimuth>0.0</Azimuth>
           <Elevation>0.0</Elevation>
           <Rotation>0.0</Rotation>
-          <PayloadID>10001</PayloadID>
+          <PayloadID>10004</PayloadID>
           <Parameters/>
         </CameraState>
       </PayloadStateList>

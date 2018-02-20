@@ -72,7 +72,7 @@ def main():
         output_state = controller.move(**input_states)
         print(output_state)
         fire_outputs(output_state, av_states)
-        sleep(38)
+        sleep(8)
         msg_obj = update_av_states(av_states, msg_obj, lmcp_factory, socket_sub)
 
 
@@ -81,16 +81,16 @@ def fire_outputs(cmds, states):
         track(1)
         print("UAV 1 is tracking")
     else:
-        goto(1,cmds['uloc1'])
-        print("UAV 1 goes to {}".format(cmds['uloc1']))
+        goto(1,int(cmds['uloc1'])+1)
+        print("UAV 1 goes to {}".format(int(cmds['uloc1'])+1))
     if cmds['vTrack2']:
         track(2)
         print("UAV 2 is tracking")
     else:
-        goto(2,cmds['uloc2'])
-        print("UAV 2 goes to {}".format(cmds['uloc2']))
-    goto(4,cmds['vloc'])
-    print("VIP goes to {}".format(cmds['vloc']))
+        goto(2,int(cmds['uloc2'])+1)
+        print("UAV 2 goes to {}".format(int(cmds['uloc2'])+1))
+    goto(4,int(cmds['vloc'])+1)
+    print("VIP goes to {}".format(int(cmds['vloc'])+1))
 
 
 
@@ -135,10 +135,10 @@ def update_inputs(splist, avlocs):
             'olocs':avlocs[2]}
 
 def in_(sp,state):
-    if state.Latitude > LOCATIONS[sp].lat - 0.0072 and \
-       state.Latitude < LOCATIONS[sp].lat + 0.0072 and \
-       state.Longitude > LOCATIONS[sp].lon - 0.0072 and \
-       state.Longitude < LOCATIONS[sp].lon + 0.0072:
+    if state.Latitude > LOCATIONS[sp].lat - 0.0122 and \
+       state.Latitude < LOCATIONS[sp].lat + 0.0122 and \
+       state.Longitude > LOCATIONS[sp].lon - 0.0122 and \
+       state.Longitude < LOCATIONS[sp].lon + 0.0122:
            print "returned True"
            return True
     else:

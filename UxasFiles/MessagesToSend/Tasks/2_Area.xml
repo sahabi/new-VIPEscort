@@ -1,5 +1,5 @@
 <AreaSearchTask Series="CMASI">
-    <TaskID>20</TaskID>
+    <TaskID>2</TaskID>
     <Label>AS20</Label>
       <SearchArea>
         <Rectangle Series="CMASI">
@@ -11,8 +11,8 @@
               <AltitudeType>MSL</AltitudeType>
             </Location3D>
           </CenterPoint>
-          <Width>1000.0</Width>
-          <Height>1000.0</Height>
+          <Width>1500.0</Width>
+          <Height>1500.0</Height>
           <Rotation>0.0</Rotation>
         </Rectangle>
       </SearchArea>

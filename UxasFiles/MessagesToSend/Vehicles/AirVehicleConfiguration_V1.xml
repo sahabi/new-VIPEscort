@@ -7,7 +7,7 @@
           <Airspeed>22.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
-          <MaxBankAngle>20.0</MaxBankAngle>
+          <MaxBankAngle>60.0</MaxBankAngle>
           <EnergyRate>2.78E-4</EnergyRate>
         </FlightProfile>
       </NominalFlightProfile>

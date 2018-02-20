@@ -7,7 +7,7 @@ RM_LOG="rm -R ./log"
 
 BIN="$UXAS_PATH/uxas"
 
-mkdir -p RUNDIR_CooperativeSearch
+mkdir -p RUNDIR_VIPEscort
 cd RUNDIR_VIPEscort
 $RM_DATAWORK
 $RM_LOG

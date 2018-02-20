@@ -6,7 +6,6 @@
         <!-- Necessary. These are how UxAS sends vehicle commands to AMASE -->
         <SubscribeToMessage MessageType="afrl.cmasi.MissionCommand" />
         <SubscribeToMessage MessageType="afrl.cmasi.VehicleActionCommand" />
-        <SubscribeToMessage MessageType="afrl.cmasi.PointSearchTask" />
         <SubscribeToMessage MessageType="afrl.cmasi.AreaSearchTask" />
         <SubscribeToMessage MessageType="afrl.cmasi.WatchTask" />
     </Bridge>
@@ -49,18 +48,18 @@
         <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="270"/>
         <Message MessageFileName="Vehicles/AirVehicleState_V4.xml" SendTime_ms="240"/>
         
-        <Message MessageFileName="Tasks/1_GoToTask.xml" SendTime_ms="330"/>
+        <!--Message MessageFileName="Tasks/1_GoToTask.xml" SendTime_ms="330"/>
         <Message MessageFileName="Tasks/2_GoToTask.xml" SendTime_ms="330"/>
         <Message MessageFileName="Tasks/3_GoToTask.xml" SendTime_ms="340"/>
         <Message MessageFileName="Tasks/4_GoToTask.xml" SendTime_ms="350"/>
-        <Message MessageFileName="Tasks/5_GoToTask.xml" SendTime_ms="360"/>
+        <Message MessageFileName="Tasks/5_GoToTask.xml" SendTime_ms="360"/-->
 
         <Message MessageFileName="Tasks/6_WatchTask.xml" SendTime_ms="370"/>
-        <!--Message MessageFileName="Tasks/1_Area.xml" SendTime_ms="380"/>
+        <Message MessageFileName="Tasks/1_Area.xml" SendTime_ms="380"/>
         <Message MessageFileName="Tasks/2_Area.xml" SendTime_ms="390"/>
         <Message MessageFileName="Tasks/3_Area.xml" SendTime_ms="400"/>
         <Message MessageFileName="Tasks/4_Area.xml" SendTime_ms="410"/>
-        <Message MessageFileName="Tasks/5_Area.xml" SendTime_ms="420"/-->
+        <Message MessageFileName="Tasks/5_Area.xml" SendTime_ms="420"/>
         
         <Message MessageFileName="Tasks/MissionCommand.xml" SendTime_ms="430"/>
         <Message MessageFileName="Zones/1_KeepInZone.xml" SendTime_ms="440"/>
