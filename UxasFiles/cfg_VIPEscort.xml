@@ -40,14 +40,14 @@
     <Service Type="PlanBuilderService" AssignmentStartPointLead_m="0.0"/>
     
     <Service Type="SendMessagesService" PathToMessageFiles="../MessagesToSend/">
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V1.xml" SendTime_ms="210"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V2.xml" SendTime_ms="220"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V3.xml" SendTime_ms="230"/>
-        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V4.xml" SendTime_ms="200"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V1.xml" SendTime_ms="250"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V2.xml" SendTime_ms="260"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="270"/>
-        <Message MessageFileName="Vehicles/AirVehicleState_V4.xml" SendTime_ms="280"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V1.xml" SendTime_ms="200"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V2.xml" SendTime_ms="210"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V3.xml" SendTime_ms="220"/>
+        <Message MessageFileName="Vehicles/AirVehicleConfiguration_V4.xml" SendTime_ms="230"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V1.xml" SendTime_ms="240"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V2.xml" SendTime_ms="250"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V3.xml" SendTime_ms="260"/>
+        <Message MessageFileName="Vehicles/AirVehicleState_V4.xml" SendTime_ms="270"/>
         
         <!--Message MessageFileName="Tasks/GoTo/1_GoToTask.xml" SendTime_ms="330"/>
         <Message MessageFileName="Tasks/GoTo/2_GoToTask.xml" SendTime_ms="330"/>
@@ -55,16 +55,16 @@
         <Message MessageFileName="Tasks/GoTo/4_GoToTask.xml" SendTime_ms="350"/>
         <Message MessageFileName="Tasks/GoTo/5_GoToTask.xml" SendTime_ms="360"/-->
 
-        <Message MessageFileName="Tasks/6_WatchTask.xml" SendTime_ms="330"/>
-        <Message MessageFileName="Tasks/1_Area.xml" SendTime_ms="430"/>
-        <Message MessageFileName="Tasks/2_Area.xml" SendTime_ms="440"/>
-        <Message MessageFileName="Tasks/3_Area.xml" SendTime_ms="450"/>
-        <Message MessageFileName="Tasks/4_Area.xml" SendTime_ms="460"/>
-        <Message MessageFileName="Tasks/5_Area.xml" SendTime_ms="470"/>
+        <Message MessageFileName="Tasks/6_WatchTask.xml" SendTime_ms="280"/>
+        <Message MessageFileName="Tasks/1_Area.xml" SendTime_ms="290"/>
+        <Message MessageFileName="Tasks/2_Area.xml" SendTime_ms="300"/>
+        <Message MessageFileName="Tasks/3_Area.xml" SendTime_ms="310"/>
+        <Message MessageFileName="Tasks/4_Area.xml" SendTime_ms="320"/>
+        <Message MessageFileName="Tasks/5_Area.xml" SendTime_ms="330"/>
          
-        <Message MessageFileName="Tasks/MissionCommand.xml" SendTime_ms="480"/>
-        <Message MessageFileName="Zones/1_KeepInZone.xml" SendTime_ms="490"/>
-        <Message MessageFileName="Zones/1_OperatingRegion.xml" SendTime_ms="500"/>
+        <Message MessageFileName="Tasks/MissionCommand.xml" SendTime_ms="340"/>
+        <Message MessageFileName="Zones/1_KeepInZone.xml" SendTime_ms="350"/>
+        <Message MessageFileName="Zones/1_OperatingRegion.xml" SendTime_ms="360"/>
 
       </Service>
     
