@@ -7,13 +7,13 @@
       <Label>Escort 1</Label>
             <MinimumSpeed>18.0055561065674</MinimumSpeed>
             <MaximumSpeed>33.4388885498047</MaximumSpeed>
-            <NominalSpeed>22.0</NominalSpeed>
+            <NominalSpeed>33.0</NominalSpeed>
             <NominalAltitude>600.0</NominalAltitude>
             <NominalAltitudeType>MSL</NominalAltitudeType>
             <NominalFlightProfile>
                 <FlightProfile Series="CMASI">
                     <Name></Name>
-                    <Airspeed>22.1211109161377</Airspeed>
+                    <Airspeed>33.1211109161377</Airspeed>
                     <PitchAngle>0</PitchAngle>
                     <VerticalSpeed>0</VerticalSpeed>
                     <MaxBankAngle>20</MaxBankAngle>
@@ -80,13 +80,13 @@
       <Label>Escort 2</Label>
             <MinimumSpeed>18.0055561065674</MinimumSpeed>
             <MaximumSpeed>33.4388885498047</MaximumSpeed>
-            <NominalSpeed>22.0</NominalSpeed>
+            <NominalSpeed>33.0</NominalSpeed>
             <NominalAltitude>600.0</NominalAltitude>
             <NominalAltitudeType>MSL</NominalAltitudeType>
             <NominalFlightProfile>
                 <FlightProfile Series="CMASI">
                     <Name></Name>
-                    <Airspeed>22.1211109161377</Airspeed>
+                    <Airspeed>33.1211109161377</Airspeed>
                     <PitchAngle>0</PitchAngle>
                     <VerticalSpeed>0</VerticalSpeed>
                     <MaxBankAngle>20</MaxBankAngle>
@@ -153,13 +153,13 @@
       <Label>Enemy</Label>
             <MinimumSpeed>18.0055561065674</MinimumSpeed>
             <MaximumSpeed>33.4388885498047</MaximumSpeed>
-            <NominalSpeed>22.0</NominalSpeed>
+            <NominalSpeed>33.0</NominalSpeed>
             <NominalAltitude>600.0</NominalAltitude>
             <NominalAltitudeType>MSL</NominalAltitudeType>
             <NominalFlightProfile>
                 <FlightProfile Series="CMASI">
                     <Name></Name>
-                    <Airspeed>22.1211109161377</Airspeed>
+                    <Airspeed>33.1211109161377</Airspeed>
                     <PitchAngle>0</PitchAngle>
                     <VerticalSpeed>0</VerticalSpeed>
                     <MaxBankAngle>20</MaxBankAngle>
@@ -226,13 +226,13 @@
       <Label>VIP</Label>
             <MinimumSpeed>18.0055561065674</MinimumSpeed>
             <MaximumSpeed>33.4388885498047</MaximumSpeed>
-            <NominalSpeed>22.0</NominalSpeed>
+            <NominalSpeed>33.0</NominalSpeed>
             <NominalAltitude>600.0</NominalAltitude>
             <NominalAltitudeType>MSL</NominalAltitudeType>
             <NominalFlightProfile>
                 <FlightProfile Series="CMASI">
                     <Name></Name>
-                    <Airspeed>22.1211109161377</Airspeed>
+                    <Airspeed>33.1211109161377</Airspeed>
                     <PitchAngle>0</PitchAngle>
                     <VerticalSpeed>0</VerticalSpeed>
                     <MaxBankAngle>20</MaxBankAngle>
@@ -304,7 +304,7 @@
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
-      <Airspeed>22.12111</Airspeed>
+      <Airspeed>33.12111</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>
@@ -362,7 +362,7 @@
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
-      <Airspeed>22.12111</Airspeed>
+      <Airspeed>33</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>
@@ -420,7 +420,7 @@
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
-      <Airspeed>22.12111</Airspeed>
+      <Airspeed>33</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>
@@ -478,7 +478,7 @@
           <AltitudeType>MSL</AltitudeType>
         </Location3D>
       </Location>
-      <Airspeed>22.12111</Airspeed>
+      <Airspeed>33</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>

@@ -1,5 +1,5 @@
     <AirVehicleState Series="CMASI" Time="1.5">
-      <Airspeed>22.12111</Airspeed>
+      <Airspeed>33.12111</Airspeed>
       <VerticalSpeed>0.0</VerticalSpeed>
       <WindSpeed>0.0</WindSpeed>
       <WindDirection>0.0</WindDirection>
@@ -20,7 +20,7 @@
       <Groundspeed>0.0</Groundspeed>
       <Location>
         <Location3D Series="CMASI">
-          <Latitude>45.287</Latitude>
+          <Latitude>45.370</Latitude>
           <Longitude>-120.9122</Longitude>
           <Altitude>1000.0</Altitude>
           <AltitudeType>MSL</AltitudeType>

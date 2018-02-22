@@ -4,7 +4,7 @@
       <NominalFlightProfile>
         <FlightProfile Series="CMASI">
           <Name/>
-          <Airspeed>22.12111</Airspeed>
+          <Airspeed>33.12111</Airspeed>
           <PitchAngle>0.0</PitchAngle>
           <VerticalSpeed>0.0</VerticalSpeed>
           <MaxBankAngle>20.0</MaxBankAngle>
@@ -27,7 +27,7 @@
       <Affiliation>Unknown</Affiliation>
       <EntityType/>
       <Label>Enemy</Label>
-      <NominalSpeed>22.0</NominalSpeed>
+      <NominalSpeed>33.0</NominalSpeed>
       <NominalAltitude>1000.0</NominalAltitude>
       <NominalAltitudeType>MSL</NominalAltitudeType>
       <PayloadConfigurationList>

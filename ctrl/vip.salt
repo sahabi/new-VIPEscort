@@ -19,94 +19,88 @@ output vTrack2 : Bool = False
 
 -- Go to commands for VIP, UAV1 and UAV2
 output vloc : Int 0 ... 4 = 1
-output uloc1 : Int 0 ... 5 = 2
-output uloc2 : Int 0 ... 5 = 4
+output uloc1 : Int 0 ... 4 = 2
+output uloc2 : Int 0 ... 4 = 4
 
 -- Environment assumptions
 env_trans
 
-    olocs' == 0 -> olocs == 0 \/ olocs == 1 \/ olocs == 2
-    olocs' == 1 -> olocs == 0 \/ olocs == 1 \/ olocs == 2
-    olocs' == 2 -> olocs == 0 \/ olocs == 1 \/ olocs == 2 \/ olocs == 3 \/ olocs == 4
-    olocs' == 3 -> olocs == 2 \/ olocs == 3 \/ olocs == 4
-    olocs' == 4 -> olocs == 2 \/ olocs == 3 \/ olocs == 4
-
-    
-    -- VIP can only move when it's tracked
-    vloc == 0 /\ vlocs != 0 -> (vTrack1 \/ vTrack2) 
-    vloc == 1 /\ vlocs != 1 -> (vTrack1 \/ vTrack2) 
-    vloc == 2 /\ vlocs != 2 -> (vTrack1 \/ vTrack2) 
-    vloc == 3 /\ vlocs != 3 -> (vTrack1 \/ vTrack2)
-    vloc == 4 /\ vlocs != 4 -> (vTrack1 \/ vTrack2)
+    --olocs' == 0 -> olocs == 0 \/ olocs == 1 \/ olocs == 2
+    --olocs' == 1 -> olocs == 0 \/ olocs == 1 \/ olocs == 2
+    --olocs' == 2 -> olocs == 0 \/ olocs == 1 \/ olocs == 2 \/ olocs == 3 \/ olocs == 4
+    --olocs' == 3 -> olocs == 2 \/ olocs == 3 \/ olocs == 4
+    --olocs' == 4 -> olocs == 2 \/ olocs == 3 \/ olocs == 4
 
     -- A location is considered surveilled iff the location is visited by either UAVs 
-    (uloc1s == 0 \/ uloc2s == 0) -> sp0
-    (uloc1s == 1 \/ uloc2s == 1) -> sp1
-    (uloc1s == 2 \/ uloc2s == 2) -> sp2
-    (uloc1s == 3 \/ uloc2s == 3) -> sp3
-    (uloc1s == 4 \/ uloc2s == 4) -> sp4
+    --(uloc1s == 0 \/ uloc2s == 0) -> sp0
+    --(uloc1s == 1 \/ uloc2s == 1) -> sp1
+    --(uloc1s == 2 \/ uloc2s == 2) -> sp2
+    --(uloc1s == 3 \/ uloc2s == 3) -> sp3
+    --(uloc1s == 4 \/ uloc2s == 4) -> sp4
 
-    (!sp0 /\ (uloc1 != 0 /\ uloc2 != 0)) -> (!sp0')
-    !sp1 /\ (uloc1 != 1 /\ uloc2 != 1) -> (!sp1')
-    !sp2 /\ (uloc1 != 2 /\ uloc2 != 2) -> (!sp2')
-    !sp3 /\ (uloc1 != 3 /\ uloc2 != 3) -> (!sp3')
-    !sp4 /\ (uloc1 != 4 /\ uloc2 != 4) -> (!sp4')
+    --(!sp0 /\ (uloc1 != 0 /\ uloc2 != 0)) -> (!sp0')
+    --!sp1 /\ (uloc1 != 1 /\ uloc2 != 1) -> (!sp1')
+    --!sp2 /\ (uloc1 != 2 /\ uloc2 != 2) -> (!sp2')
+    --!sp3 /\ (uloc1 != 3 /\ uloc2 != 3) -> (!sp3')
+    --!sp4 /\ (uloc1 != 4 /\ uloc2 != 4) -> (!sp4')
 
-    -- A surveilled location remains marked as surveilled    
-    sp0 -> sp0'
-    sp1 -> sp1'
-    sp2 -> sp2'
-    sp3 -> sp3'
-    sp4 -> sp4'
+    -- A surveilled location remains marked as surveilled
 
-env_liveness
-
-    olocs == 0
-    olocs == 1
-    olocs == 2
-    olocs == 3
-    olocs == 4
+    --sp0 -> sp0'
+    --sp1 -> sp1'
+    --sp2 -> sp2'
+   -- sp3 -> sp3'
+    --sp4 -> sp4'
 
     -- The vehicle will eventually reach the location it was commanded to go to
-    vloc == 0 -> vlocs == 0
-    vloc == 1 -> vlocs == 1
-    vloc == 2 -> vlocs == 2
-    vloc == 3 -> vlocs == 3
-    vloc == 4 -> vlocs == 4
 
-    uloc1 == 0 -> uloc1s == 0
-    uloc1 == 1 -> uloc1s == 1
-    uloc1 == 2 -> uloc1s == 2
-    uloc1 == 3 -> uloc1s == 3
-    uloc1 == 4 -> uloc1s == 4
+    vloc == 0 -> vlocs' == 0
+    vloc == 1 -> vlocs' == 1
+    vloc == 2 -> vlocs' == 2
+    vloc == 3 -> vlocs' == 3
+    vloc == 4 -> vlocs' == 4
 
-    uloc2 == 0 -> uloc2s == 0
-    uloc2 == 1 -> uloc2s == 1
-    uloc2 == 2 -> uloc2s == 2
-    uloc2 == 3 -> uloc2s == 3
-    uloc2 == 4 -> uloc2s == 4
+    uloc1 == 0 -> uloc1s' == 0
+    uloc1 == 1 -> uloc1s' == 1
+    uloc1 == 2 -> uloc1s' == 2
+    uloc1 == 3 -> uloc1s' == 3
+    uloc1 == 4 -> uloc1s' == 4
 
-    -- The go to command cannot change until the vehicle reaches the go to destination 
-    uloc1 == 0 /\ uloc1s != 0 -> (uloc1' == 0)
-    uloc1 == 1 /\ uloc1s != 1 -> (uloc1' == 1)
-    uloc1 == 2 /\ uloc1s != 2 -> (uloc1' == 2)
-    uloc1 == 3 /\ uloc1s != 3 -> (uloc1' == 3)
-    uloc1 == 4 /\ uloc1s != 4 -> (uloc1' == 4)
+    uloc2 == 0 -> uloc2s' == 0
+    uloc2 == 1 -> uloc2s' == 1
+    uloc2 == 2 -> uloc2s' == 2
+    uloc2 == 3 -> uloc2s' == 3
+    uloc2 == 4 -> uloc2s' == 4
+
+--env_liveness
+
+    --olocs == 0
+    --olocs == 1
+    --olocs == 2
+    --olocs == 3
+    --olocs == 4
 
 sys_trans
-    
-    -- a UAV can track the VIP iff they are both at the same location
-    vTrack1 -> (vlocs == 0 /\ uloc1s == 0)
-    vTrack1 -> (vlocs == 1 /\ uloc1s == 1)
-    vTrack1 -> (vlocs == 2 /\ uloc1s == 2)
-    vTrack1 -> (vlocs == 3 /\ uloc1s == 3)
-    vTrack1 -> (vlocs == 4 /\ uloc1s == 4)
 
-    vTrack2 -> (vlocs == 0 /\ uloc2s == 0)
-    vTrack2 -> (vlocs == 1 /\ uloc2s == 1)
-    vTrack2 -> (vlocs == 2 /\ uloc2s == 2)
-    vTrack2 -> (vlocs == 3 /\ uloc2s == 3)
-    vTrack2 -> (vlocs == 4 /\ uloc2s == 4)
+    -- VIP can only move when it's tracked
+    --vloc == 0 /\ vlocs != 0 -> (vTrack1 \/ vTrack2) 
+    --vloc == 1 /\ vlocs != 1 -> (vTrack1 \/ vTrack2) 
+    --vloc == 2 /\ vlocs != 2 -> (vTrack1 \/ vTrack2) 
+    --vloc == 3 /\ vlocs != 3 -> (vTrack1 \/ vTrack2)
+    --vloc == 4 /\ vlocs != 4 -> (vTrack1 \/ vTrack2)
+
+    -- a UAV can track the VIP iff they are both at the same location
+    --vTrack1 -> (vlocs == 0 /\ uloc1s == 0)
+    --vTrack1 -> (vlocs == 1 /\ uloc1s == 1)
+    --vTrack1 -> (vlocs == 2 /\ uloc1s == 2)
+    --vTrack1 -> (vlocs == 3 /\ uloc1s == 3)
+    --vTrack1 -> (vlocs == 4 /\ uloc1s == 4)
+
+    --vTrack2 -> (vlocs == 0 /\ uloc2s == 0)
+    --vTrack2 -> (vlocs == 1 /\ uloc2s == 1)
+    --vTrack2 -> (vlocs == 2 /\ uloc2s == 2)
+    --vTrack2 -> (vlocs == 3 /\ uloc2s == 3)
+    --vTrack2 -> (vlocs == 4 /\ uloc2s == 4)
 
     -- Allowed transitions between locations for VIP, UAV1, and UAV2
     uloc1s == 0 -> uloc1 == 0 \/ uloc1 == 1 \/ uloc1 == 2
@@ -127,11 +121,11 @@ sys_trans
     vlocs == 3 -> vloc == 2 \/ vloc == 3 \/ vloc == 4  
     vlocs == 4 -> vloc == 2 \/ vloc == 3 \/ vloc == 4
 
-    vloc' == 0 -> olocs != 0
-    vloc' == 1 -> olocs != 1
-    vloc' == 2 -> olocs != 2
-    vloc' == 3 -> olocs != 3
-    vloc' == 4 -> olocs != 4
+    --vloc' == 0 -> olocs != 0
+    --vloc' == 1 -> olocs != 1
+    --vloc' == 2 -> olocs != 2
+    --vloc' == 3 -> olocs != 3
+    --vloc' == 4 -> olocs != 4
 
 sys_liveness
     vloc == 4
