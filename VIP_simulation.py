@@ -28,17 +28,18 @@ socket_send = context.socket(zmq.PUSH)
 socket_send.connect("tcp://127.0.0.1:5561")
 
 def fire_outputs(cmds, states):
-    if cmds['vTrack1']:
+    if False: #cmds['vTrack1']:
         track(1)
     else:
         goto(1,int(cmds['uloc1'])+1)
-    if cmds['vTrack2']:
+    if False: #cmds['vTrack2']:
         track(2)
     else:
         goto(2,int(cmds['uloc2'])+1)
     goto(4,int(cmds['vloc'])+1)
     enemy_loc = choice([3,4,5])
     goto(3,enemy_loc)
+    return enemy_loc
 
 def goto(uav, loc):
     factory = LMCPFactory.LMCPFactory()
@@ -178,6 +179,7 @@ def update_av_states(av_states, msg_obj, lmcp_factory, socket_sub):
 
 def main():
     controller = Vip()
+    print("Initiated: Reactive Controller")
     splist = [(False,i) for i in range(5)]
     lmcp_factory = LMCPFactory.LMCPFactory()
     av_configurations = dict()
@@ -196,10 +198,14 @@ def main():
         print(input_states)
         output_state = controller.move(**input_states)
         print(output_state)
-        fire_outputs(output_state, av_states)
-        for i in range(400):
+        enemy_loc = fire_outputs(output_state, av_states)
+        while (input_states['vlocs'] != output_state['vloc'] or
+                input_states['uloc1s'] != output_state['uloc1'] or
+                input_states['uloc2s'] != output_state['uloc2'] or
+                input_states['olocs'] != enemy_loc-1):
             avlocs = update_avlocs(av_states, avlocs)
             splist = update_surv(splist,av_states)
+            input_states = update_inputs(splist, avlocs)
             (msg_obj, av_states) = update_av_states(av_states, msg_obj, lmcp_factory, socket_sub)
 
 if __name__ == '__main__':
